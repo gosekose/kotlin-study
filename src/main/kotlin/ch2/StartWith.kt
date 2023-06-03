@@ -30,4 +30,14 @@ class StartWith {
     fun startWithA6(str: String?): Boolean { // 예외 던지기
         return str?.startsWith("A") ?:throw IllegalArgumentException("null!!")
     }
+
+
+    fun startWithA7(str: String?): Boolean {
+        str ?: return false; // early return 방법
+        return str.startsWith("A")
+    }
+
+    fun startWithA8(str: String?): Boolean {
+        return str!!.startsWith("A") // str이  null일 수 없는 경우 !! 로 컴파일러에게 알리기
+    }
 }
