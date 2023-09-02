@@ -1,4 +1,4 @@
-package receiver
+package scope
 
 class WithAddress(
     val city: String,

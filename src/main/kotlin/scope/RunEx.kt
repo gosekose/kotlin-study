@@ -1,5 +1,6 @@
-package receiver
+package scope
 
+/* 영역 함수 */
 class Address {
     var zipCode: Int = 0
     var city: String = ""
@@ -10,6 +11,15 @@ class Address {
         println("Message for {$zipCode, $city, $street, $house}: $message")
         return readlnOrNull() == "OK"
     }
+}
+
+/* 문맥이 없는 run */
+class RunAddress(
+    private val city: String,
+    private val street: String,
+    private val house: String
+) {
+    fun asText() = "$city, $street, $house"
 }
 
 fun main() {
@@ -24,4 +34,17 @@ fun main() {
     if (!isReceiver) {
         println("Message is not delivered")
     }
+
+    val address = run {
+        val city = readlnOrNull() ?: return
+        val street = readlnOrNull() ?: return
+        val house = readlnOrNull() ?: return
+        RunAddress(
+            city = city,
+            street = street,
+            house = house,
+        )
+    }
+
+    println(address.asText())
 }
