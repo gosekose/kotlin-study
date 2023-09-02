@@ -105,3 +105,11 @@
 - fold
   - 초기값을 원하는대로 지정 가능
   - 컬렉션의 타입과 다른 타입으로 만들 수 있음
+
+## 걸러내기
+- 원본 컬렉션을 변경하지 않음
+- 전혀 새로운 컬렉션을 만들거나 원본 컬렉션과 구분되는 기존 가변 컬렉션에 선택된 원소를 추가 함
+- Array<T> 나 Iterable<T> filter -> List<T> 획득
+- Map<K, V> filter -> Map<K, V> 획득
+- Sequence<T> filter -> Sequence<T> 획득
+- 배열에 적용하더라도 filter가 성립하지만 List<T>로 박싱
