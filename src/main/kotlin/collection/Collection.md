@@ -113,3 +113,18 @@
 - Map<K, V> filter -> Map<K, V> 획득
 - Sequence<T> filter -> Sequence<T> 획득
 - 배열에 적용하더라도 filter가 성립하지만 List<T>로 박싱
+
+## 변환
+- 매핑, 평평하게 하기, 연관 짓기
+- 매핑 변환은 주어진 함수를 원본 컬렉션의 각 원소에 적용
+- 함수를 적용한 결과는 새로운 컬렉션의 원소
+- associate
+  - associate: 람다에서 Pair를 정의 { it to it * it }
+  - associateWith: 원래의 원소를 키로 사용하고 람다로 해당 원소의 값을 정의
+  - associateBy: 람다로 키를 정의, 원래의 원소의 값으로 사용
+
+## 순서
+- 컬렉션의 원소를 정해진 순서에 따라 정렬하는 함수가 있음
+- sorted()
+- 원소 타입이 비교 가능한 배열/이터러블/시퀀스에 적용할 수 있고 원소들의 자연스러운 순서에 따라 오름차순으로 원소를 정렬
+- sortedDescending() 내림차순으로 정렬
