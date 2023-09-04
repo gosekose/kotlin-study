@@ -1,4 +1,4 @@
-package clazzstructure
+package clazzstructure.structures
 
 open class VehicleV1 {
     var currentSpeed = 0

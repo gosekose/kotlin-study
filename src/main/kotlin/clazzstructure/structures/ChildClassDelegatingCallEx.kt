@@ -1,4 +1,4 @@
-package clazzstructure
+package clazzstructure.structures
 
 open class PersonByDelegatingCall(
     val name: String,
