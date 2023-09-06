@@ -114,3 +114,11 @@ j
 :src/main/kotlin/clazzstructure/delegations/DelegationEx.kt,b/f/bf79279cb4a35797e5c6c052a095e2f8d566ae90
 h
 8src/main/kotlin/clazzstructure/delegations/Delegation.md,2/c/2c477b74d9cf500f54f1472f7d9da1436f541a66
+X
+(src/main/kotlin/dsl/operator/Operator.md,1/2/12783270e804c473f4053e19a0bc1385bec90ded
+n
+>src/main/kotlin/dsl/deletationproperty/DeletagionPropertyEx.kt,a/d/ade5699e9c9f822bc4754268ac58cf1de9993ee8
+Z
+*src/main/kotlin/dsl/operator/OperatorEx.kt,a/a/aa7ce51d37ed222619fa1e951f728c99dccd6150
+l
+<src/main/kotlin/dsl/deletationproperty/DelegationProperty.md,0/2/022c3c5cb2b34d243f7d8f2dab1ad02ccbdf87bc
