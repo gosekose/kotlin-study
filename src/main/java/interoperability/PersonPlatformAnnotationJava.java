@@ -2,11 +2,11 @@ package interoperability;
 
 import org.jetbrains.annotations.NotNull;
 
-public class PersonPlatformAnnotation {
+public class PersonPlatformAnnotationJava {
     @NotNull private String name;
     private int age;
 
-    public PersonPlatformAnnotation(@NotNull String name, int age) {
+    public PersonPlatformAnnotationJava(@NotNull String name, int age) {
         this.name = name;
         this.age = age;
     }

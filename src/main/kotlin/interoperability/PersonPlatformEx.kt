@@ -1,7 +1,7 @@
 package interoperability
 
 fun main() {
-    val person = PersonPlatform(null, 25)
+    val person = PersonPlatformJava(null, 25)
 
     try {
         println(person.name.length)
@@ -9,7 +9,7 @@ fun main() {
         println("NPE 발생 message = ${e.message}")
     }
 
-    val person2 = PersonPlatformAnnotation("null 불가", 25)
+    val person2 = PersonPlatformAnnotationJava("null 불가", 25)
     println(person2)
 
 }

@@ -1,10 +1,10 @@
 package interoperability;
 
-public class PersonPlatform {
+public class PersonPlatformJava {
     private String name;
     private int age;
 
-    public PersonPlatform(String name, int age) {
+    public PersonPlatformJava(String name, int age) {
         this.name = name;
         this.age = age;
     }
