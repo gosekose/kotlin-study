@@ -3,12 +3,28 @@ plugins {
     application
 }
 
-group = "org.example"
-version = "1.0-SNAPSHOT"
+allprojects {
+    group = "org.example"
+    version = "1.0-SNAPSHOT"
 
-repositories {
-    mavenCentral()
+    repositories {
+        mavenCentral()
+    }
 }
+
+subprojects {
+    apply {
+        apply(plugin = "kotlin")
+        apply(plugin = "kotlin-kapt")
+    }
+
+    dependencies {
+        testImplementation(kotlin("test"))
+        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
+    }
+
+}
+
 
 dependencies {
     testImplementation(kotlin("test"))
