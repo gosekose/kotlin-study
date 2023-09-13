@@ -8,19 +8,58 @@ sealed class List<out A> {
             return if (aa.isEmpty()) Nil else Cons(aa[0], of(*tail))
         }
 
-        fun sum(ints: List<Int>): Int =
-            when (ints) {
-                is Nil -> 0
-                is Cons -> ints.head + sum(ints.tail)
+        fun sum(ints: List<Int>): Int = when (ints) {
+            is Nil -> 0
+            is Cons -> ints.head + sum(ints.tail)
+        }
+
+        fun product(doubles: List<Double>): Double = when (doubles) {
+            is Nil -> 1.0
+            is Cons -> if (doubles.head == 0.0) 0.0
+            else doubles.head * product(doubles.tail)
+        }
+
+        fun <A> tail(xs: List<A>): List<A> =
+            when (xs) {
+                is Cons -> xs.tail
+                is Nil -> throw IllegalArgumentException()
             }
 
-        fun product(doubles: List<Double>): Double =
-            when (doubles) {
-                is Nil -> 1.0
-                is Cons ->
-                    if (doubles.head == 0.0) 0.0
-                else doubles.head * product(doubles.tail)
+        fun <A> setHead(xs: List<A>, x: A): List<A> =
+            when (xs) {
+                is Cons -> Cons(x, xs.tail)
+                is Nil -> throw IllegalArgumentException()
             }
+
+        fun <A> drop(list: List<A>, n: Int): List<A> =
+            if (n == 0) list
+            else when (list) {
+                is Nil -> throw IllegalArgumentException()
+                is Cons -> drop(list.tail, n - 1)
+            }
+
+        fun <A> dropWhile(list: List<A>, f: (A) -> Boolean): List<A> =
+            when (list) {
+                is Cons -> if (f(list.head)) dropWhile(list.tail, f) else list
+                is Nil -> throw IllegalArgumentException()
+            }
+
+        fun <A> append(a1: List<A>, a2: List<A>): List<A> =
+            when (a1) {
+                is Nil -> a2
+                is Cons -> Cons(a1.head, append(a1.tail, a2))
+            }
+
+        fun <A> init(list: List<A>): List<A> =
+            when (list) {
+                is Cons ->
+                    if (list.tail == Nil) Nil
+                    else Cons(list.head, init(list.tail))
+
+                is Nil ->
+                    throw IllegalArgumentException()
+            }
+
     }
 }
 
